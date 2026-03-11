@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Attendance</title>
+<script src="js/main.js"></script>
+</head>
+<body>
+
+<h2>Attendance</h2>
+<p id="dt"></p>
+
+<script>
+let user = getUser();
+let now = new Date();
+
+document.getElementById("dt").innerHTML =
+"Date: " + now.toLocaleDateString() +
+" | Time: " + now.toLocaleTimeString();
+
+let attendance = JSON.parse(localStorage.getItem("attendance") || "[]");
+
+attendance.push({
+name:user.name,
+role:user.role,
+date:now.toLocaleDateString(),
+time:now.toLocaleTimeString()
+});
+
+localStorage.setItem("attendance", JSON.stringify(attendance));
+</script>
+
+</body>
+</html>
