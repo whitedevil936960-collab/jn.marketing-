@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<script src="js/main.js"></script>
+</head>
+<body>
+
+<h1 id="welcome"></h1>
+
+<a href="attendance.html">Attendance</a><br>
+<a href="orders.html">Orders</a><br>
+
+<script>
+let user = getUser();
+
+document.getElementById("welcome").innerHTML =
+"Welcome " + user.name + " (" + user.role + ")";
+</script>
+
+</body>
+</html>
